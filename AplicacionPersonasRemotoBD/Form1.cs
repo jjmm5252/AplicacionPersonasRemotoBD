@@ -35,5 +35,72 @@ namespace AplicacionPersonasRemotoBD
 
 
         }
+
+        private void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            TxtID.Enabled = true;
+            TxtNombre.Enabled = true;
+            TxtTelefono.Enabled = true;
+
+            //limpiar contenido
+            TxtID.Clear();
+            TxtNombre.Clear();
+            TxtTelefono.Clear();
+
+            //habilito el guardar y cancelar
+            BtnGuardar.Enabled = true;
+            BtnCancelar.Enabled = true;
+
+            //desahilito los demas
+            BtnNuevo.Enabled = false;
+            BtnEditar.Enabled = false;
+            BtnEliminar.Enabled = false;
+            BtnSalir.Enabled = false;
+
+            //mando el foco al txtID
+            TxtID.Focus();
+
+
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+
+            TxtID.Enabled = false;
+            TxtNombre.Enabled = false;
+            TxtTelefono.Enabled = false;
+
+            //limpiar contenido
+            TxtID.Clear();
+            TxtNombre.Clear();
+            TxtTelefono.Clear();
+
+            //desabilito el guardar y cancelar
+            BtnGuardar.Enabled = false;
+            BtnCancelar.Enabled = false;
+
+            //habilito los demas
+            BtnNuevo.Enabled = true;
+            BtnEditar.Enabled = true;
+            BtnEliminar.Enabled = true;
+            BtnSalir.Enabled = true;
+
+            //mando el foco al Nuevo
+            BtnNuevo.Focus();
+
+
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            //creo un DialogResult
+            DialogResult Respuesta = new DialogResult();
+            Respuesta = MessageBox.Show("Desea Salir de la Aplicacion ?", "Pregunta", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+
+            if (Respuesta == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

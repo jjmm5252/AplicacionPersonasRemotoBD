@@ -121,6 +121,7 @@
             BtnNuevo.Text = "Nuevo";
             BtnNuevo.TextAlign = ContentAlignment.BottomCenter;
             BtnNuevo.UseVisualStyleBackColor = true;
+            BtnNuevo.Click += BtnNuevo_Click;
             // 
             // BtnGuardar
             // 
@@ -145,6 +146,7 @@
             BtnCancelar.Text = "Cancelar";
             BtnCancelar.TextAlign = ContentAlignment.BottomCenter;
             BtnCancelar.UseVisualStyleBackColor = true;
+            BtnCancelar.Click += BtnCancelar_Click;
             // 
             // BtnEditar
             // 
@@ -178,6 +180,7 @@
             BtnSalir.Text = "Salir";
             BtnSalir.TextAlign = ContentAlignment.BottomCenter;
             BtnSalir.UseVisualStyleBackColor = true;
+            BtnSalir.Click += BtnSalir_Click;
             // 
             // DgvPersonas
             // 
