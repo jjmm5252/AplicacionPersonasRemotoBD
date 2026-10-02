@@ -42,8 +42,8 @@
             BtnEditar = new Button();
             BtnEliminar = new Button();
             BtnSalir = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            DgvPersonas = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)DgvPersonas).BeginInit();
             SuspendLayout();
             // 
             // BtnConectar
@@ -179,17 +179,17 @@
             BtnSalir.TextAlign = ContentAlignment.BottomCenter;
             BtnSalir.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DgvPersonas
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(87, 361);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(638, 266);
-            dataGridView1.TabIndex = 13;
+            DgvPersonas.AllowUserToAddRows = false;
+            DgvPersonas.AllowUserToDeleteRows = false;
+            DgvPersonas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvPersonas.Location = new Point(85, 380);
+            DgvPersonas.Name = "DgvPersonas";
+            DgvPersonas.ReadOnly = true;
+            DgvPersonas.RowHeadersWidth = 51;
+            DgvPersonas.Size = new Size(638, 266);
+            DgvPersonas.TabIndex = 13;
             // 
             // Form1
             // 
@@ -197,7 +197,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(795, 658);
             ControlBox = false;
-            Controls.Add(dataGridView1);
+            Controls.Add(DgvPersonas);
             Controls.Add(BtnSalir);
             Controls.Add(BtnEliminar);
             Controls.Add(BtnEditar);
@@ -214,7 +214,8 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)DgvPersonas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -234,6 +235,6 @@
         private Button BtnEditar;
         private Button BtnEliminar;
         private Button BtnSalir;
-        private DataGridView dataGridView1;
+        private DataGridView DgvPersonas;
     }
 }
