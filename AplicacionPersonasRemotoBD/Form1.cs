@@ -15,8 +15,13 @@ namespace AplicacionPersonasRemotoBD
             }
             else
             {
-                MessageBox.Show("ERROR Excepcion: "+ClaseFunciones.excepcion);
+                MessageBox.Show("ERROR Excepcion: " + ClaseFunciones.excepcion);
             }
+        }
+
+        private void TxtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

@@ -28,32 +28,212 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             BtnConectar = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            TxtID = new TextBox();
+            TxtNombre = new TextBox();
+            TxtTelefono = new TextBox();
+            BtnNuevo = new Button();
+            BtnGuardar = new Button();
+            BtnCancelar = new Button();
+            BtnEditar = new Button();
+            BtnEliminar = new Button();
+            BtnSalir = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // BtnConectar
             // 
-            BtnConectar.Location = new Point(78, 128);
+            BtnConectar.Location = new Point(573, 107);
             BtnConectar.Name = "BtnConectar";
-            BtnConectar.Size = new Size(197, 92);
+            BtnConectar.Size = new Size(152, 88);
             BtnConectar.TabIndex = 0;
             BtnConectar.Text = "Conectar";
             BtnConectar.UseVisualStyleBackColor = true;
             BtnConectar.Click += BtnConectar_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(103, 92);
+            label1.Name = "label1";
+            label1.Size = new Size(24, 20);
+            label1.TabIndex = 1;
+            label1.Text = "ID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(103, 141);
+            label2.Name = "label2";
+            label2.Size = new Size(64, 20);
+            label2.TabIndex = 2;
+            label2.Text = "Nombre";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(103, 184);
+            label3.Name = "label3";
+            label3.Size = new Size(67, 20);
+            label3.TabIndex = 3;
+            label3.Text = "Telefono";
+            // 
+            // TxtID
+            // 
+            TxtID.Enabled = false;
+            TxtID.Location = new Point(211, 92);
+            TxtID.MaxLength = 19;
+            TxtID.Name = "TxtID";
+            TxtID.Size = new Size(183, 27);
+            TxtID.TabIndex = 4;
+            TxtID.KeyPress += TxtID_KeyPress;
+            // 
+            // TxtNombre
+            // 
+            TxtNombre.Enabled = false;
+            TxtNombre.Location = new Point(211, 134);
+            TxtNombre.MaxLength = 100;
+            TxtNombre.Name = "TxtNombre";
+            TxtNombre.Size = new Size(309, 27);
+            TxtNombre.TabIndex = 5;
+            // 
+            // TxtTelefono
+            // 
+            TxtTelefono.Enabled = false;
+            TxtTelefono.Location = new Point(211, 181);
+            TxtTelefono.MaxLength = 100;
+            TxtTelefono.Name = "TxtTelefono";
+            TxtTelefono.Size = new Size(256, 27);
+            TxtTelefono.TabIndex = 6;
+            // 
+            // BtnNuevo
+            // 
+            BtnNuevo.Image = (Image)resources.GetObject("BtnNuevo.Image");
+            BtnNuevo.Location = new Point(85, 250);
+            BtnNuevo.Name = "BtnNuevo";
+            BtnNuevo.Size = new Size(92, 105);
+            BtnNuevo.TabIndex = 7;
+            BtnNuevo.Text = "Nuevo";
+            BtnNuevo.TextAlign = ContentAlignment.BottomCenter;
+            BtnNuevo.UseVisualStyleBackColor = true;
+            // 
+            // BtnGuardar
+            // 
+            BtnGuardar.Enabled = false;
+            BtnGuardar.Image = (Image)resources.GetObject("BtnGuardar.Image");
+            BtnGuardar.Location = new Point(193, 250);
+            BtnGuardar.Name = "BtnGuardar";
+            BtnGuardar.Size = new Size(92, 105);
+            BtnGuardar.TabIndex = 8;
+            BtnGuardar.Text = "Guardar";
+            BtnGuardar.TextAlign = ContentAlignment.BottomCenter;
+            BtnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // BtnCancelar
+            // 
+            BtnCancelar.Enabled = false;
+            BtnCancelar.Image = (Image)resources.GetObject("BtnCancelar.Image");
+            BtnCancelar.Location = new Point(300, 250);
+            BtnCancelar.Name = "BtnCancelar";
+            BtnCancelar.Size = new Size(92, 105);
+            BtnCancelar.TabIndex = 9;
+            BtnCancelar.Text = "Cancelar";
+            BtnCancelar.TextAlign = ContentAlignment.BottomCenter;
+            BtnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // BtnEditar
+            // 
+            BtnEditar.Image = (Image)resources.GetObject("BtnEditar.Image");
+            BtnEditar.Location = new Point(408, 250);
+            BtnEditar.Name = "BtnEditar";
+            BtnEditar.Size = new Size(92, 105);
+            BtnEditar.TabIndex = 10;
+            BtnEditar.Text = "Editar";
+            BtnEditar.TextAlign = ContentAlignment.BottomCenter;
+            BtnEditar.UseVisualStyleBackColor = true;
+            // 
+            // BtnEliminar
+            // 
+            BtnEliminar.Image = (Image)resources.GetObject("BtnEliminar.Image");
+            BtnEliminar.Location = new Point(515, 250);
+            BtnEliminar.Name = "BtnEliminar";
+            BtnEliminar.Size = new Size(92, 105);
+            BtnEliminar.TabIndex = 11;
+            BtnEliminar.Text = "Eliminar";
+            BtnEliminar.TextAlign = ContentAlignment.BottomCenter;
+            BtnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // BtnSalir
+            // 
+            BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
+            BtnSalir.Location = new Point(622, 250);
+            BtnSalir.Name = "BtnSalir";
+            BtnSalir.Size = new Size(92, 105);
+            BtnSalir.TabIndex = 12;
+            BtnSalir.Text = "Salir";
+            BtnSalir.TextAlign = ContentAlignment.BottomCenter;
+            BtnSalir.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(87, 361);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(638, 266);
+            dataGridView1.TabIndex = 13;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(795, 658);
+            ControlBox = false;
+            Controls.Add(dataGridView1);
+            Controls.Add(BtnSalir);
+            Controls.Add(BtnEliminar);
+            Controls.Add(BtnEditar);
+            Controls.Add(BtnCancelar);
+            Controls.Add(BtnGuardar);
+            Controls.Add(BtnNuevo);
+            Controls.Add(TxtTelefono);
+            Controls.Add(TxtNombre);
+            Controls.Add(TxtID);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(BtnConectar);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button BtnConectar;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private TextBox TxtID;
+        private TextBox TxtNombre;
+        private TextBox TxtTelefono;
+        private Button BtnNuevo;
+        private Button BtnGuardar;
+        private Button BtnCancelar;
+        private Button BtnEditar;
+        private Button BtnEliminar;
+        private Button BtnSalir;
+        private DataGridView dataGridView1;
     }
 }
