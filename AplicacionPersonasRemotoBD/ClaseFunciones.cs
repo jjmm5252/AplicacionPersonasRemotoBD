@@ -47,5 +47,24 @@ namespace AplicacionPersonasRemotoBD
                 return dt;
             }
         }
+
+        public static bool Func_Insertar(long id,string nombre,string telefono)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadena);
+                string consulta = $"insert into tbl_personas values({id},'{nombre}','{telefono}')";
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                //ejecuto el adaptador 
+                adaptador.Fill(dt);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                excepcion = ex.ToString();
+                return false;
+            }
+        }
     }
 }

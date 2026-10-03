@@ -95,11 +95,38 @@ namespace AplicacionPersonasRemotoBD
         {
             //creo un DialogResult
             DialogResult Respuesta = new DialogResult();
-            Respuesta = MessageBox.Show("Desea Salir de la Aplicacion ?", "Pregunta", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+            Respuesta = MessageBox.Show("Desea Salir de la Aplicacion ?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (Respuesta == DialogResult.OK)
             {
                 Application.Exit();
+            }
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            //valido que el usuario llene los datos
+            if (TxtID.Text.Length > 0 && TxtNombre.Text.Length > 0 && TxtTelefono.Text.Length > 0)
+            {
+                if (ClaseFunciones.Func_Insertar(Convert.ToInt64 (TxtID.Text),TxtNombre.Text, TxtTelefono.Text))
+                {
+                    MessageBox.Show("Persona Agregada", "Felicitaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    DataTable dt = new DataTable();
+                    dt = ClaseFunciones.Func_TraerDatos();
+                    //muestro los datos
+                    DgvPersonas.DataSource = dt;
+
+                    BtnCancelar_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Hubo una excepcion "+ClaseFunciones.excepcion, "Excepcion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta ingresar Datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
