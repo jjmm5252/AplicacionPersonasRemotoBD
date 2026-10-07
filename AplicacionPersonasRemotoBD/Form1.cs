@@ -108,7 +108,7 @@ namespace AplicacionPersonasRemotoBD
             //valido que el usuario llene los datos
             if (TxtID.Text.Length > 0 && TxtNombre.Text.Length > 0 && TxtTelefono.Text.Length > 0)
             {
-                if (ClaseFunciones.Func_Insertar(Convert.ToInt64 (TxtID.Text),TxtNombre.Text, TxtTelefono.Text))
+                if (ClaseFunciones.Func_Insertar(Convert.ToInt64(TxtID.Text), TxtNombre.Text, TxtTelefono.Text))
                 {
                     MessageBox.Show("Persona Agregada", "Felicitaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -121,7 +121,7 @@ namespace AplicacionPersonasRemotoBD
                 }
                 else
                 {
-                    MessageBox.Show("Hubo una excepcion "+ClaseFunciones.excepcion, "Excepcion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo una excepcion " + ClaseFunciones.excepcion, "Excepcion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -129,5 +129,34 @@ namespace AplicacionPersonasRemotoBD
                 MessageBox.Show("Falta ingresar Datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            //capturo el ID del DataGrid
+            long idEliminar = Convert.ToInt64(DgvPersonas.CurrentRow.Cells["ID"].Value.ToString());
+            //pregunto si quiere eliminar
+            DialogResult Respuesta = new DialogResult();
+            Respuesta = MessageBox.Show($"Desea eliminar el ID {idEliminar}?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (Respuesta == DialogResult.OK)
+            {
+                if (ClaseFunciones.Func_Eliminar(idEliminar))
+                {
+                    MessageBox.Show("Persona Eliminada", "Felicitaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataTable dt = new DataTable();
+                    dt = ClaseFunciones.Func_TraerDatos();
+                    //muestro los datos
+                    DgvPersonas.DataSource = dt;
+
+                    BtnCancelar_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Hubo una excepcion " + ClaseFunciones.excepcion, "Excepcion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+           
+        }
+           
     }
 }

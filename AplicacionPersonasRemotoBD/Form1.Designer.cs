@@ -170,6 +170,7 @@
             BtnEliminar.Text = "Eliminar";
             BtnEliminar.TextAlign = ContentAlignment.BottomCenter;
             BtnEliminar.UseVisualStyleBackColor = true;
+            BtnEliminar.Click += BtnEliminar_Click;
             // 
             // BtnSalir
             // 

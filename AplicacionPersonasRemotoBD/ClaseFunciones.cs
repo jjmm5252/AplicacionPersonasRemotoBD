@@ -66,5 +66,25 @@ namespace AplicacionPersonasRemotoBD
                 return false;
             }
         }
+
+        //Funcion Eliminar
+        public static bool Func_Eliminar(long id)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadena);
+                string consulta = $"Delete from tbl_personas where ID = {id}";
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                //ejecuto el adaptador 
+                adaptador.Fill(dt);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                excepcion = ex.ToString();
+                return false;
+            }
+        }
     }
 }
