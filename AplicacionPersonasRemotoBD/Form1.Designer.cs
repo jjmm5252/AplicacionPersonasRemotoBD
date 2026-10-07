@@ -159,6 +159,7 @@
             BtnEditar.Text = "Editar";
             BtnEditar.TextAlign = ContentAlignment.BottomCenter;
             BtnEditar.UseVisualStyleBackColor = true;
+            BtnEditar.Click += BtnEditar_Click;
             // 
             // BtnEliminar
             // 

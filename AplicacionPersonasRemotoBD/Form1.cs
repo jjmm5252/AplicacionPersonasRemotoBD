@@ -108,21 +108,46 @@ namespace AplicacionPersonasRemotoBD
             //valido que el usuario llene los datos
             if (TxtID.Text.Length > 0 && TxtNombre.Text.Length > 0 && TxtTelefono.Text.Length > 0)
             {
-                if (ClaseFunciones.Func_Insertar(Convert.ToInt64(TxtID.Text), TxtNombre.Text, TxtTelefono.Text))
+                //inserta cuando el ID esta HABILITADO
+                if (TxtID.Enabled == true)
                 {
-                    MessageBox.Show("Persona Agregada", "Felicitaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (ClaseFunciones.Func_Insertar(Convert.ToInt64(TxtID.Text), TxtNombre.Text, TxtTelefono.Text))
+                    {
+                        MessageBox.Show("Persona Agregada", "Felicitaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    DataTable dt = new DataTable();
-                    dt = ClaseFunciones.Func_TraerDatos();
-                    //muestro los datos
-                    DgvPersonas.DataSource = dt;
+                        DataTable dt = new DataTable();
+                        dt = ClaseFunciones.Func_TraerDatos();
+                        //muestro los datos
+                        DgvPersonas.DataSource = dt;
 
-                    BtnCancelar_Click(sender, e);
+                        BtnCancelar_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo una excepcion " + ClaseFunciones.excepcion, "Excepcion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Hubo una excepcion " + ClaseFunciones.excepcion, "Excepcion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //editar
+                    if (ClaseFunciones.Func_Editar(Convert.ToInt64(TxtID.Text), TxtNombre.Text, TxtTelefono.Text))
+                    {
+                        MessageBox.Show("Persona Editada", "Felicitaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        DataTable dt = new DataTable();
+                        dt = ClaseFunciones.Func_TraerDatos();
+                        //muestro los datos
+                        DgvPersonas.DataSource = dt;
+
+                        BtnCancelar_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo una excepcion " + ClaseFunciones.excepcion, "Excepcion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
+
             }
             else
             {
@@ -155,8 +180,34 @@ namespace AplicacionPersonasRemotoBD
                 }
             }
 
-           
+
         }
-           
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            //habilito los texbox menos el ID
+            TxtID.Enabled = false;
+            TxtNombre.Enabled = true;
+            TxtTelefono.Enabled = true;
+
+            //capturar datos del DataGridView
+            TxtID.Text = DgvPersonas.CurrentRow.Cells["ID"].Value.ToString();
+            TxtNombre.Text = DgvPersonas.CurrentRow.Cells["Nombre"].Value.ToString();
+            TxtTelefono.Text = DgvPersonas.CurrentRow.Cells["Telefono"].Value.ToString();
+
+            //habilito el guardar y cancelar
+            BtnGuardar.Enabled = true;
+            BtnCancelar.Enabled = true;
+
+            //desahilito los demas
+            BtnNuevo.Enabled = false;
+            BtnEditar.Enabled = false;
+            BtnEliminar.Enabled = false;
+            BtnSalir.Enabled = false;
+
+            //mando el foco al txtNombre
+            TxtNombre.Focus();
+
+        }
     }
 }
