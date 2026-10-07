@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            BtnConectar = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -43,18 +42,10 @@
             BtnEliminar = new Button();
             BtnSalir = new Button();
             DgvPersonas = new DataGridView();
+            BtnImprimir = new Button();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)DgvPersonas).BeginInit();
             SuspendLayout();
-            // 
-            // BtnConectar
-            // 
-            BtnConectar.Location = new Point(573, 107);
-            BtnConectar.Name = "BtnConectar";
-            BtnConectar.Size = new Size(152, 88);
-            BtnConectar.TabIndex = 0;
-            BtnConectar.Text = "Conectar";
-            BtnConectar.UseVisualStyleBackColor = true;
-            BtnConectar.Click += BtnConectar_Click;
             // 
             // label1
             // 
@@ -197,12 +188,29 @@
             DgvPersonas.Size = new Size(638, 266);
             DgvPersonas.TabIndex = 13;
             // 
+            // BtnImprimir
+            // 
+            BtnImprimir.Image = (Image)resources.GetObject("BtnImprimir.Image");
+            BtnImprimir.Location = new Point(622, 103);
+            BtnImprimir.Name = "BtnImprimir";
+            BtnImprimir.Size = new Size(92, 105);
+            BtnImprimir.TabIndex = 14;
+            BtnImprimir.Text = "Imprimir";
+            BtnImprimir.TextAlign = ContentAlignment.BottomCenter;
+            BtnImprimir.UseVisualStyleBackColor = true;
+            BtnImprimir.Click += BtnImprimir_Click;
+            // 
+            // printDocument1
+            // 
+            printDocument1.PrintPage += printDocument1_PrintPage;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(795, 658);
             ControlBox = false;
+            Controls.Add(BtnImprimir);
             Controls.Add(DgvPersonas);
             Controls.Add(BtnSalir);
             Controls.Add(BtnEliminar);
@@ -216,7 +224,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(BtnConectar);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -227,8 +234,6 @@
         }
 
         #endregion
-
-        private Button BtnConectar;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -242,5 +247,7 @@
         private Button BtnEliminar;
         private Button BtnSalir;
         private DataGridView DgvPersonas;
+        private Button BtnImprimir;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

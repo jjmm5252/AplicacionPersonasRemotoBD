@@ -373,4 +373,21 @@
         g0U8lrWIKfkDNudo2rB5iEEAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="BtnImprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAcVJREFUaEPtmrtKxFAURZe/YKOFlahgbyWCtbWF2tlaWFj5EyKIip2FoKD+gIWN
+        vYVgYSOIr0+w8skeEoz3nnEeyU1yNRtWMecM2XvDTJhMAv9IY8A8sBAYecirUG0Cb8BnSchLnoVoCfgw
+        TEIjT3nn1rFx8LI4ccP0ozPjwGUh79xqCuSgKSA1BXLQFJCaAjkopMAh8FwRR26YP60BYBpYAdZqirIp
+        o7L+0DhwWdGvzn5QVmVuaQh4Mt5Ud5R5WAW2jWUs7KjAo7GIBWXn3VhUyStwAOwBL8Y+i7J7w6rZ+j63
+        sGrsXbxB1axnCugfCnfv4g2qRp/rOWAWuDL2Lt4gNrxBbHiD2PAGKafAaE1QFjdfxwL7yZlgApiqCHlL
+        yuLm67pAHS5omgLuriyaAm4BXadeBEYewQrsJrOQkkdPBdrdebEKXCcGIZFHtwWUnTtj0a5A2XQqoOxs
+        GAsRQwFlZxC4NZZWgYfkdUjuuyygzMre0ghw7vytYhXQZzS05PFbAWVUVmX2NAksAsvATDLLFrhJDhYS
+        ebgFlEWZlE0Ze1K2QNmkBXIp+tusVd3oFoXc6JaiftQgVfqwh75IIQnysEdt9QX0VwRdpk6XogAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <metadata name="printDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

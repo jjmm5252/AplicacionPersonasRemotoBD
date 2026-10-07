@@ -1,4 +1,5 @@
 using System.Data;
+using System.Drawing.Text;
 
 namespace AplicacionPersonasRemotoBD
 {
@@ -7,18 +8,6 @@ namespace AplicacionPersonasRemotoBD
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void BtnConectar_Click(object sender, EventArgs e)
-        {
-            if (ClaseFunciones.Funcion_Conectar())
-            {
-                MessageBox.Show("Conextado a SQL SERVER Remoto", "FELICIDADES!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("ERROR Excepcion: " + ClaseFunciones.excepcion);
-            }
         }
 
         private void TxtID_KeyPress(object sender, KeyPressEventArgs e)
@@ -209,5 +198,36 @@ namespace AplicacionPersonasRemotoBD
             TxtNombre.Focus();
 
         }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+            printDocument1.Print();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Font fuente = new Font("Courier New", 13, FontStyle.Bold);
+            DataTable dt = new DataTable();
+            dt = ClaseFunciones.Func_TraerDatos();
+            e.Graphics.DrawString("Listado Personas", fuente, new SolidBrush(Color.Black), new PointF(300, 10));
+            e.Graphics.DrawString("ID", fuente, new SolidBrush(Color.Black), new PointF(50, 50));
+
+            int fila = 80;
+            //recorro la tabla
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                long id = Convert.ToInt64(dt.Rows[i]["ID"].ToString());
+                string name = dt.Rows[i]["Nombre"].ToString();
+                string tel = dt.Rows[i]["Telefono"].ToString();
+                e.Graphics.DrawString(id.ToString(), fuente, new SolidBrush(Color.Black), new PointF(50, fila));
+                fila += 20;
+            }
+
+            //Final de linea
+            e.HasMorePages = false;
+
+        }
+
+
     }
 }
