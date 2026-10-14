@@ -44,6 +44,7 @@
             DgvPersonas = new DataGridView();
             BtnImprimir = new Button();
             printDocument1 = new System.Drawing.Printing.PrintDocument();
+            BtnExcel = new Button();
             ((System.ComponentModel.ISupportInitialize)DgvPersonas).BeginInit();
             SuspendLayout();
             // 
@@ -185,15 +186,15 @@
             DgvPersonas.Name = "DgvPersonas";
             DgvPersonas.ReadOnly = true;
             DgvPersonas.RowHeadersWidth = 51;
-            DgvPersonas.Size = new Size(638, 266);
+            DgvPersonas.Size = new Size(753, 266);
             DgvPersonas.TabIndex = 13;
             // 
             // BtnImprimir
             // 
             BtnImprimir.Image = (Image)resources.GetObject("BtnImprimir.Image");
-            BtnImprimir.Location = new Point(622, 103);
+            BtnImprimir.Location = new Point(740, 26);
             BtnImprimir.Name = "BtnImprimir";
-            BtnImprimir.Size = new Size(92, 105);
+            BtnImprimir.Size = new Size(98, 105);
             BtnImprimir.TabIndex = 14;
             BtnImprimir.Text = "Imprimir";
             BtnImprimir.TextAlign = ContentAlignment.BottomCenter;
@@ -204,12 +205,25 @@
             // 
             printDocument1.PrintPage += printDocument1_PrintPage;
             // 
+            // BtnExcel
+            // 
+            BtnExcel.Image = (Image)resources.GetObject("BtnExcel.Image");
+            BtnExcel.Location = new Point(740, 141);
+            BtnExcel.Name = "BtnExcel";
+            BtnExcel.Size = new Size(98, 116);
+            BtnExcel.TabIndex = 15;
+            BtnExcel.Text = "Extraer en Excel";
+            BtnExcel.TextAlign = ContentAlignment.BottomCenter;
+            BtnExcel.UseVisualStyleBackColor = true;
+            BtnExcel.Click += BtnExcel_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(795, 658);
+            ClientSize = new Size(905, 658);
             ControlBox = false;
+            Controls.Add(BtnExcel);
             Controls.Add(BtnImprimir);
             Controls.Add(DgvPersonas);
             Controls.Add(BtnSalir);
@@ -249,5 +263,6 @@
         private DataGridView DgvPersonas;
         private Button BtnImprimir;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private Button BtnExcel;
     }
 }

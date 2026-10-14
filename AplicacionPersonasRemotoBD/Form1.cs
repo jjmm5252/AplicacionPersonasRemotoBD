@@ -1,4 +1,6 @@
+using ClosedXML.Excel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing.Text;
 
 namespace AplicacionPersonasRemotoBD
@@ -228,6 +230,24 @@ namespace AplicacionPersonasRemotoBD
 
         }
 
+        private void BtnExcel_Click(object sender, EventArgs e)
+        {
+            bool resultado = ClaseFunciones.Func_ExportalExcel(); 
 
+            if (resultado)
+            {
+                Process p = new Process()
+                {
+                    StartInfo = new ProcessStartInfo(@"C:\PruebaExcel.xlsx")
+                    { UseShellExecute = true }
+                };
+                p.Start();
+            }
+            else
+            {
+                MessageBox.Show("Excepcion:" + ClaseFunciones.excepcion);
+            }
+                
+        }
     }
 }
